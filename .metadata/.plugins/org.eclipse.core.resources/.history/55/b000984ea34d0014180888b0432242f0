@@ -1,0 +1,41 @@
+package string.manipulation;
+/*
+ * 1 Reverse the individual word
+ * 2 Reverse the whole string i.e String = Hello Java output = Java Hello 
+ * 
+
+*/
+public class ReverseString {
+
+	public static String revrseString(char[] data){
+		
+		int start=0;
+		int end=data.length-1;
+		char temp;
+		for(;start>end;start++,end--){
+			temp=data[start];
+			data[start]=data[end];
+			data[end]=temp;
+		
+			
+		}
+		
+		
+		return data.toString();
+		
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		char[] data={'h','e','l','l','o'};
+		System.out.println(revrseString(data.toCharArray()));
+		
+		
+	}
+	
+	
+}

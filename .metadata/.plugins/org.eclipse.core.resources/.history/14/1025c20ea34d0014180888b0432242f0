@@ -1,0 +1,24 @@
+package string.manipulation;
+
+public class ReverseString {
+
+	public static String revrseString(char[] data){
+		
+		int start=0;
+		int end=data.length-1;
+		char temp;
+		for(;start>end;start++,end--){
+			temp=data[start];
+			data[start]=data[end];
+			data[end]=temp;
+		
+			
+		}
+		
+		
+		return data.toString();
+		
+	}
+	
+	
+}

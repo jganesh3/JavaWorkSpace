@@ -1,0 +1,108 @@
+package string.manipulation;
+/*
+ * 1 Reverse the individual word
+ * 2 Reverse the whole string i.e String = Hello Java output = Java Hello 
+ * 
+
+*/
+public class ReverseString {
+
+	public static void reverseWord(char[] word){
+		
+		int start=0;
+		int end=word.length-1;
+		char temp;
+		for(;start<end;start++,end--){
+			temp=word[start];
+			word[start]=word[end];
+			word[end]=temp;
+		
+			
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static String reverseString(String string){
+		
+		
+		
+
+			
+			int len=string.length()-1;
+			if(len==0)return string;
+			char[] reverse=new char[len];
+			
+			//Initialization
+			int ptr=len;
+			int endword=len;
+			int startword=len;
+			int arrptr=0; //  this will store the index for new array;
+		
+			while(ptr>=0){
+			
+			while(string.charAt(startword)!=' '){
+				
+				startword--;
+			}
+			
+			//we found the word  at location startword+1 to endword
+			//copy this word to new array
+			while(startword!=endword){
+				reverse[arrptr++]=string.charAt(startword++);
+			}
+			
+			
+			}
+			
+			
+			return reverse.toString();
+			
+		
+			
+			
+			
+			
+			
+	
+		
+		
+		
+	}
+	
+	
+	public static void display(char[] data){
+		if(data.length==0)
+			{
+			System.out.println("Empty Array");
+			return;
+			}
+		for(char c :data)
+			System.out.print(c+" ");
+		
+		System.out.println();
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		char[] data={'h','e','l','l','o'};
+		
+		display(data);
+		reverseWord(data);
+		display(data);
+		
+		
+		String d1="Hello Java";
+		
+		
+	}
+	
+	
+}
