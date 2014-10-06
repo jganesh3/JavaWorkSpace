@@ -1,0 +1,48 @@
+package LinkedList;
+
+class Node<E> {
+	
+	private E data;
+	private Node left;
+	private Node right;
+	
+
+	// Constructor
+	public Node(E x){
+		this.data=x;
+		this.left=null;
+		this.right=null;
+		
+	}
+	
+	
+	public E getData(){
+		return this.data;
+		
+	}
+	
+	
+	public Node getLeft(){
+		return this.left;
+	}
+	
+	public Node getRight(){
+		return this.right;
+	}
+	
+	public void setRight(Node x){
+		this.right=x;
+	}
+	
+	public void setLeft(Node y){
+		this.left=y;
+	}
+	
+	
+	
+	
+	
+
+	
+
+}
