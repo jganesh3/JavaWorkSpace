@@ -1,0 +1,11 @@
+package string.manipulation;
+/*
+ * Write a function which will remove the duplicate characters in String
+ * e.g. "aaab" ==> "ab"
+*/
+public class RemoveDupsChar {
+
+	
+	
+	
+}

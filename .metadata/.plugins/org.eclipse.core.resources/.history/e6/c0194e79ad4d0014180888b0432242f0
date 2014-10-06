@@ -1,0 +1,13 @@
+package string.manipulation;
+/*
+ * Write a function which will remove the duplicate characters in String
+ * e.g. "aaab" ==> "ab" 
+ * 
+ * Write algorithm using extra memory and without using extra memory
+*/
+public class RemoveDupsChar {
+
+	
+	
+	
+}

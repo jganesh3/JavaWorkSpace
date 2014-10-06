@@ -1,0 +1,26 @@
+package string.manipulation;
+
+import java.util.Hashtable;
+/*
+ * Write a function which will remove the duplicate characters in String
+ * e.g. "aaab" ==> "ab" 
+ * 
+ * Write algorithm using extra memory and without using extra memory
+*/
+public class RemoveDupsChar {
+
+	/*
+	 * Algo which uses Extra memory
+	*/
+	
+	public static StringBuilder removeDupsI(String input){
+		
+		//Create an lookup HashTable which will indicate if the character is duplicate or not
+		HashTable<Character> lookup=new HashTable<>();
+		
+		
+		
+	}
+	
+	
+}
