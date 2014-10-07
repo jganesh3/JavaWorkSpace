@@ -52,11 +52,7 @@ public class RemoveDupsChar {
 	
 	public static char[] rermoveDups2(char[] data){
 		
-	
 		
-		
-		
-		return data;
 
 		
 		

@@ -52,13 +52,26 @@ public class RemoveDupsChar {
 	
 	public static char[] rermoveDups2(char[] data){
 		
-	
+		int start=0;
+		int end=0;
+		int len=data.length-1;
 		
+		while(end < len){
+			if(data[start]==data[end])
+				end++;
+			else{
+				
+				data[start] = data[end];
+				end++;
+				start++;
+				
+			}
+		}
+		
+		data[start]='0';
 		
 		
 		return data;
-
-		
 		
 	}
 	
@@ -66,8 +79,8 @@ public class RemoveDupsChar {
 	
 	public static void main(String[] args) {
 		String x="aaaab";
-		//System.out.println(removeDupsI(x).toString());
-		char[] d2={'a','a','b','b','c','c'};
+		System.out.println(removeDupsI(x).toString());
+		char[] d2={'a','a','a','a','b','c','c','a'};
 		d2=rermoveDups2(d2);
 		
 		for(char a:d2){
