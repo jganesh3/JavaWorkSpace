@@ -52,7 +52,24 @@ public class RemoveDupsChar {
 	
 	public static char[] rermoveDups2(char[] data){
 		
-	
+		if(data.length==0) return data;
+		int len=data.length-1;
+		
+		int current=0;
+		int running=0;
+		int tail=1;
+		
+		for(int i=0;i<len;i++){
+			
+			for(int j=0;j<tail;j++){
+				if(data[j]==data[i])break;
+			}
+			
+			
+			
+		}
+		
+		
 		
 		
 		
