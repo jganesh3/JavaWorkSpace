@@ -1,48 +1,30 @@
+*.pydevproject
 .metadata
-*.class
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
 
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# External tool builders
+.externalToolBuilders/
 
-# Folder config file
-Desktop.ini
+# Locally stored "Eclipse launch configurations"
+*.launch
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# CDT-specific
+.cproject
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# PDT-specific
+.buildpath
 
-# =========================
-# Operating System Files
-# =========================
+# sbteclipse plugin 
+.target
 
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-
+# TeXlipse plugin
+.texlipse
