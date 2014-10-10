@@ -6,3 +6,4 @@
 1412633328173	Rename method 'revrseString'
 1412633342439	Rename method 'revrseWord'
 1412633366449	Rename local variable 'data'
+1412979933266	Rename type 'LRUCache'
