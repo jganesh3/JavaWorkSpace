@@ -2,17 +2,23 @@ package hibernate.java.mySql;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity (name="EMP_MAIN")
+import org.hibernate.annotations.GeneratorType;
+
+@Entity               //if we give @Entity (name="emp") this will give table name as emp as well as change Entity name from Employee to emp
+@Table(name="emp")   // This annotation will give the table name while keeping same entity name.
 public class Employee {
 	@Column (name="first_name")
 	private String firstName;
 	@Column(name="last_name")
 	private String lastName;
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="emp_id")
-	private String empID;
+	private int empID;
 	@Column(name="salary_current")
 	private double salary;
 	@Column(name="Department")
@@ -29,10 +35,10 @@ public class Employee {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getEmpID() {
+	public int getEmpID() {
 		return empID;
 	}
-	public void setEmpID(String empID) {
+	public void setEmpID(int empID) {
 		this.empID = empID;
 	}
 	public double getSalary() {

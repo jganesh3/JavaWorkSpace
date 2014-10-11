@@ -10,12 +10,11 @@ public class HiernateTest {
 	static ServiceRegistry serviceRegistry;
 	public static void main(String[] args) {
 	
-		Employee e1=new Employee();
-		e1.setDepartment("development");
-		e1.setEmpID("1");
-		e1.setFirstName("Ganesh");
-		e1.setLastName("Joshi");
-		e1.setSalary(100000);
+		Employee e2=new Employee();
+		e2.setDepartment("testing");
+		e2.setFirstName("G");
+		e2.setLastName("J");
+		e2.setSalary(100000);
 		
 		//Create configuration object
 		Configuration configuration = new Configuration();
@@ -31,9 +30,13 @@ public class HiernateTest {
 		try {
 			session.beginTransaction();
 			//save the object
-			session.save(e1);
+			
+			session.save(e2);
+			
 			//commit the transaction
 			session.getTransaction().commit();
+			
+			session.close();
 		} catch (Exception e) {
 			//Roll back the transaction in case of any errors
 			e.printStackTrace();
@@ -42,7 +45,19 @@ public class HiernateTest {
 		
 		
 		
+		Employee e3=null;
+		//Open session
+		session=sessionFactory.openSession();
+		//start new transaction
+		session.beginTransaction();
+		//Retrieve data from the database
+		e3=(Employee)session.get(Employee.class, 1);
 		
+		//Now print the data
+		System.out.println("Fetched record from the database"+e3.getFirstName());
+		
+		
+		session.close();
 		
 		
 		
