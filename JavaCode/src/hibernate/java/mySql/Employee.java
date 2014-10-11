@@ -1,16 +1,21 @@
 package hibernate.java.mySql;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity (name="EMP_MAIN")
 public class Employee {
-	
+	@Column (name="first_name")
 	private String firstName;
+	@Column(name="last_name")
 	private String lastName;
 	@Id
+	@Column(name="emp_id")
 	private String empID;
+	@Column(name="salary_current")
 	private double salary;
+	@Column(name="Department")
 	private String department;
 	public String getFirstName() {
 		return firstName;
