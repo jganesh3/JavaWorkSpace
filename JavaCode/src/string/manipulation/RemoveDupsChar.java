@@ -53,28 +53,30 @@ public class RemoveDupsChar {
 	public static char[] rermoveDups2(char[] data){
 		
 		if(data.length==0) return data;
-		int len=data.length-1;
-		
-		int current=0;
-		int running=0;
+		if(data.length<2) return data;
 		int tail=1;
+		int j;
 		
-		for(int i=0;i<len;i++){
+		for(int i=0;i<data.length;i++){
 			
-			for(int j=0;j<tail;j++){
-				if(data[j]==data[i])break;
+			for(j=0;j<tail;j++){
+				
+				if(data[i]==data[j])
+					break;
+					
 			}
-			
-			
+			if(j==tail){
+				data[tail]=data[i];
+				++tail;
+			}
 			
 		}
 		
-		
-		
+		data[tail]=0;
 		
 		
 		return data;
-
+		
 		
 		
 	}
