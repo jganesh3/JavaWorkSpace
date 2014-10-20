@@ -1,6 +1,6 @@
 package node;
 
-public class Node<E> {
+public class Node<E>{
 	
 	private E data;
 	private Node<E> next;
@@ -26,6 +26,7 @@ public class Node<E> {
 		this.parent=null;
 		
 	}
+	
 	
 	
 	public Node<E> getLeft() {
