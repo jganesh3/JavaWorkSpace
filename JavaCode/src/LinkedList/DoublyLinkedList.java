@@ -16,6 +16,11 @@ public class DoublyLinkedList {
 	}
 	
 	
+	  public boolean isEmpty(){
+		  return root==null;
+	  }
+	  
+	  
 	public void add(String data){
 		
 		root=add(root,data);
@@ -23,6 +28,44 @@ public class DoublyLinkedList {
 	}
 	
 	
+	
+	
+	public void delete(String data){
+		
+		if(this.root==null)
+			return;
+		else
+			delete(root,data);
+		
+		
+	}
+	
+	
+	
+
+	private void delete(Node<String> root2, String data) {
+	
+		if(root2==null)
+			return;
+		if(root2.getData()!=data )
+			delete(root2.getNext(),data);
+		else{
+			// Link  the nodes here
+			if(root==root2){
+			// Handle if it is root 
+				root=root.getNext();
+				
+				
+			}else{
+			root2.getBack().setNext(root2.getNext());
+			root2.getNext().setback(root2.getBack());
+			root2.setback(null);
+			root2.setNext(null);
+			}
+		}
+		
+		
+	}
 
 
 	private Node<String> add(Node<String> root2, String data) {
@@ -76,7 +119,8 @@ public class DoublyLinkedList {
 	
 	
 	public void display(){
-		
+		if(isEmpty())
+			System.out.println("\nLinked List is Empty");
 		display(root);
 		
 		
@@ -114,7 +158,15 @@ public class DoublyLinkedList {
 		
 		dlist.display();
 		
-		dlist.forward_reverse();
+		//dlist.forward_reverse();
+		dlist.delete("C");
+		dlist.delete("i");
+		dlist.delete("h");
+		dlist.delete("c");
+		dlist.delete("o");
+		System.out.println();
+		dlist.display();
+		
 		
 	}
 	
