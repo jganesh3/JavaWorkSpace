@@ -54,7 +54,14 @@ class BFS {
 					
 					u.setColor(1);
 					u.setDistance(s.getDistance()+1);
+					
+					u.setParent(s);
+					
 					Q.add(u);
+					
+					
+					
+					
 					
 				}
 				
@@ -62,7 +69,8 @@ class BFS {
 			}
 			
 			
-			s.setColor(3);
+			s.setColor(2);
+			System.out.println(s);
 			
 			
 		}

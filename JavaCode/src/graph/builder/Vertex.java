@@ -33,6 +33,9 @@ package graph.builder;
 
 
 
+	public Vertex getParent(){
+		return this.parent;
+	}
 
 	public String getData(){
 		return this.data;
