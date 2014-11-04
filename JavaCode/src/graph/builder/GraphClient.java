@@ -51,13 +51,20 @@ public class GraphClient {
 			
 			
 			System.out.println("Running BFS on the graph");
-			BFS.BFS(G, vertices.get("chico"));
+			BFS.BFS(G, vertices.get("zero"));
 
 			//System.out.println("Shortest path to La is "+QueryGraph.getShortestPath(G, vertices.get("la")));
 			
 			System.out.println();
 			System.out.println("Running DFS on the graph");
 			DFS.DFS(G);
+			
+			System.out.println();
+			DAGfinder dg=new DAGfinder();
+			System.out.println("Checking if the graph is Directed Acyclic Graph : "+dg.isDAG(G));
+			dg.displayCycle();
+				
+			
 			
 			
 			vertices=null;
