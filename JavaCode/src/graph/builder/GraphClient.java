@@ -1,10 +1,16 @@
 package graph.builder;
 
+/*
+	@Author Ganesh Joshi
+	Client program which will build graph by reading the file and perform other operations such as
+	DFS/BFS/Topological Sort on it
+*/
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Hashtable;
+import java.util.Stack;
 
 public class GraphClient {
 	
@@ -51,7 +57,7 @@ public class GraphClient {
 			
 			
 			System.out.println("Running BFS on the graph");
-			BFS.BFS(G, vertices.get("zero"));
+			BFS.BFS(G, vertices.get("141"));
 
 			//System.out.println("Shortest path to La is "+QueryGraph.getShortestPath(G, vertices.get("la")));
 			
@@ -66,6 +72,11 @@ public class GraphClient {
 				
 			
 			
+			System.out.println();
+			TopologicalSort sort=new TopologicalSort();
+			Stack<Vertex> tpsort=sort.topologicalsort(G);
+			while(tpsort!=null && !tpsort.isEmpty())
+				System.out.println(tpsort.pop()+" ");
 			
 			vertices=null;
 			
