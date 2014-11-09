@@ -9,8 +9,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Stack;
+import java.util.TreeSet;
 
 public class GraphClient {
 	
@@ -56,7 +60,7 @@ public class GraphClient {
 			
 			
 			
-			System.out.println("Running BFS on the graph");
+			/*System.out.println("Running BFS on the graph");
 			BFS.BFS(G, vertices.get("141"));
 
 			//System.out.println("Shortest path to La is "+QueryGraph.getShortestPath(G, vertices.get("la")));
@@ -76,7 +80,15 @@ public class GraphClient {
 			TopologicalSort sort=new TopologicalSort();
 			Stack<Vertex> tpsort=sort.topologicalsort(G);
 			while(tpsort!=null && !tpsort.isEmpty())
-				System.out.print(tpsort.pop().getData()+" ");
+				System.out.print(tpsort.pop().getData()+" ");*/
+			
+			
+			StronglyConnectedComponents strong=new StronglyConnectedComponents();
+			HashMap<Integer, TreeSet<Vertex>>tree=strong.findStrongComponents(G);
+			System.out.println("Printing Strongly connected components"+tree);
+	
+			
+			
 			
 			vertices=null;
 			
