@@ -52,9 +52,9 @@ public class DAGfinder {
 
 
 		if(stack==null)
-			return false;
-		else
 			return true;
+		else
+			return false;
 
 
 

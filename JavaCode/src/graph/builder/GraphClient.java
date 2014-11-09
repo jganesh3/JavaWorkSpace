@@ -76,7 +76,7 @@ public class GraphClient {
 			TopologicalSort sort=new TopologicalSort();
 			Stack<Vertex> tpsort=sort.topologicalsort(G);
 			while(tpsort!=null && !tpsort.isEmpty())
-				System.out.println(tpsort.pop()+" ");
+				System.out.print(tpsort.pop().getData()+" ");
 			
 			vertices=null;
 			

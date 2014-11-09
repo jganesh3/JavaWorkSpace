@@ -21,12 +21,10 @@ import java.util.TreeSet;
   - if the list is empty no back edge is present, Hence it is DAC graph
   - else it is not a DAC
 
-
-  Topological Sort .
-  - Run DFS algorith
-  - Add the Vertex on Stack when all of it's adjecent vertices are already visited .
-  - The Stack will give the order in which Task should be perform i.e. topological sorted Vertices.
-
+TOPOLOGICAL-SORT.G
+1 call DFS.G to compute finishing times :f for each vertex 
+2 as each vertex is finished, insert it onto the stack
+3 return the stack
 
  */
 class TopologicalSort {
@@ -55,6 +53,16 @@ class TopologicalSort {
 		//Step 2 :- check if the Given graph is a DAC
 		DAGfinder dg=new DAGfinder();
 		boolean flag=dg.isDAG(G);
+		
+		// Re initialize the Graph 
+		it=G.iterator();
+		while(it.hasNext()){
+			temp=it.next();
+			temp.setColor(0);
+			temp.setParent(null);
+		}
+
+		
 		//destroy DAGfinder object
 		dg=null;
 		if(flag){
@@ -92,7 +100,7 @@ class TopologicalSort {
 		// Get all the adj vertices of the u
 
 		TreeSet<Vertex> adjlist=g.getAdjVertex(u);
-		Iterator<Vertex> iterator=g.iterator();
+		Iterator<Vertex> iterator=adjlist.iterator();
 
 		Vertex v;
 		while(iterator.hasNext()){
@@ -108,11 +116,12 @@ class TopologicalSort {
 
 			}
 
-			stack.push(v);
+			
 
 		}
 
 		u.setColor(3);
+		stack.push(u);
 
 	}
 
